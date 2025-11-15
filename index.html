@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
+  <meta charset="UTF-8" />
   <title>فروشگاه لوازم نظامی صاحب الزمان</title>
   <style>
     body {
       font-family: Arial;
       background-color: #f0f0f0;
-      text-align: center;
       margin: 0;
+      direction: rtl;
     }
     header {
       background-color: #333;
       color: white;
-      padding: 15px;
-      font-size: 22px;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
     }
     nav {
       background-color: #444;
@@ -23,55 +25,98 @@
       list-style: none;
       margin: 0;
       padding: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
     }
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
     }
     nav ul li a:hover {
-      text-shadow: 1px 1px 3px black;
+      text-shadow: 1px 1px 4px black;
     }
+
     main {
-      padding: 20px;
+      padding: 25px;
+      text-align: center;
     }
+
+    /* --- محصولات با Flexbox --- */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
     .product {
-      display: inline-block;
-      width: 200px;
+      width: 230px;
       background-color: white;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 5px gray;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s;
     }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.3);
+    }
+
     .product img {
-      width: 180px;
-      height: 150px;
-      border-radius: 5px;
+      width: 200px;
+      height: 160px;
+      border-radius: 8px;
+      object-fit: cover;
     }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #cartMsg {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+
     footer {
       background-color: #333;
       color: white;
       padding: 10px;
+      text-align: center;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
     }
-    button {
-      margin-top: 5px;
-    }
   </style>
 </head>
 <body>
   <header>فروشگاه لوازم نظامی صاحب الزمان</header>
+
   <nav>
     <ul>
-     <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="index.html">صفحه اصلی</a></li>
       <li><a href="2.html">درباره ما</a></li>
       <li><a href="3.html">ورود</a></li>
     </ul>
@@ -80,25 +125,27 @@
   <main>
     <h2>محصولات</h2>
 
-    <div class="product">
-      <img src="https://static.esam.ir/sell/itemImages/35789/tacticalshop_70119-628270!1.jpg">
-      <h3>لباس نظامی</h3>
-      <p>قیمت: 1,350,000 تومان</p>
-      <button onclick="addToCart('لباس نظامی')">افزودن به سبد</button>
-    </div>
+    <div class="product-container">
+      <div class="product">
+        <img src="https://static.esam.ir/sell/itemImages/35789/tacticalshop_70119-628270!1.jpg">
+        <h3>لباس نظامی</h3>
+        <p>قیمت: 1,350,000 تومان</p>
+        <button onclick="addToCart('لباس نظامی')">افزودن به سبد</button>
+      </div>
 
-    <div class="product">
-      <img src="https://khalabanemoshaver.ir/wp-content/uploads/2022/10/%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%AE%D8%A7%DA%A9%DB%8C-%D8%B3%D9%BE%D8%A7%D9%87.jpg">
-      <h3>چکمه نظامی</h3>
-      <p>قیمت: 280,000 تومان</p>
-      <button onclick="addToCart('چکمه نظامی')">افزودن به سبد</button>
-    </div>
+      <div class="product">
+        <img src="https://khalabanemoshaver.ir/wp-content/uploads/2022/10/%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%AE%D8%A7%DA%A9%DB%8C-%D8%B3%D9%BE%D8%A7%D9%87.jpg">
+        <h3>چکمه نظامی</h3>
+        <p>قیمت: 280,000 تومان</p>
+        <button onclick="addToCart('چکمه نظامی')">افزودن به سبد</button>
+      </div>
 
-    <div class="product">
-      <img src="https://empirmarket.com/Portals/0/eCommerce/Image/d3e72d8d-a532-4eb7-a808-21f4c15b7d0d/250_250/c1685e47-2821-4747-93c6-2c5fd4524bb7.jpg">
-      <h3>کلاه نظامی</h3>
-      <p>قیمت: 120,000 تومان</p>
-      <button onclick="addToCart('کلاه نظامی')">افزودن به سبد</button>
+      <div class="product">
+        <img src="https://empirmarket.com/Portals/0/eCommerce/Image/d3e72d8d-a532-4eb7-a808-21f4c15b7d0d/250_250/c1685e47-2821-4747-93c6-2c5fd4524bb7.jpg">
+        <h3>کلاه نظامی</h3>
+        <p>قیمت: 120,000 تومان</p>
+        <button onclick="addToCart('کلاه نظامی')">افزودن به سبد</button>
+      </div>
     </div>
 
     <p id="cartMsg"></p>
@@ -111,5 +158,6 @@
       document.getElementById('cartMsg').innerHTML = "✅ " + name + " به سبد اضافه شد.";
     }
   </script>
+
 </body>
 </html>
