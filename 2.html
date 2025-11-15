@@ -1,48 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
+  <meta charset="UTF-8" />
   <title>درباره ما</title>
   <style>
     body {
       font-family: Arial;
-      background-color: #f0f0f0;
-      text-align: center;
+      background-color: #c2b280; /* خاکی نظامی */
       margin: 0;
+      text-align: center;
+      direction: rtl;
     }
+
     header {
-      background-color: #333;
+      background-color: #2e2e2e;
       color: white;
-      padding: 15px;
-      font-size: 22px;
+      padding: 20px;
+      font-size: 24px;
     }
+
     nav {
-      background-color: #444;
-      padding: 10px;
+      background-color: #3b3b3b;
+      padding: 12px;
     }
+
     nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
     }
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
+
     nav ul li a {
       color: white;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
     }
+
     nav ul li a:hover {
-      text-shadow: 1px 1px 3px black;
+      text-shadow: 1px 1px 4px black;
     }
+
     main {
-      padding: 20px;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
     }
+
+    .about-box {
+      background-color: #f8f5e1; /* کرم روشن مناسب با خاکی */
+      padding: 25px;
+      border-radius: 12px;
+      width: 60%;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+      border-right: 6px solid #6b5f3b; /* نوار نظامی */
+      border-left: 6px solid #6b5f3b;
+    }
+
+    h2 {
+      color: #3d3d3d;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #333;
+    }
+
     footer {
-      background-color: #333;
+      background-color: #2e2e2e;
       color: white;
       padding: 10px;
+      text-align: center;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -51,20 +83,30 @@
   </style>
 </head>
 <body>
+
   <header>فروشگاه لوازم نظامی صاحب الزمان</header>
+
   <nav>
     <ul>
-     <li><a href="index.html">صفحه اصلی</a></li>
+      <li><a href="index.html">صفحه‌ اصلی</a></li>
       <li><a href="2.html">درباره ما</a></li>
       <li><a href="3.html">ورود</a></li>
     </ul>
   </nav>
 
   <main>
-    <h2>درباره ما</h2>
-    <p>فروشگاه لوازم نظامی صاحب الزمان ارائه‌دهنده انواع لباس، تجهیزات و پوشاک نظامی با کیفیت بالا و قیمت مناسب است.</p>
+    <div class="about-box">
+      <h2>درباره ما</h2>
+      <p>
+        فروشگاه لوازم نظامی صاحب الزمان با چندین سال سابقه در حوزه عرضه پوشاک، تجهیزات تاکتیکال و
+        لوازم نظامی فعالیت می‌کند.  
+        هدف ما ارائه کالاهای باکیفیت، مقاوم و کاربردی برای نیروهای نظامی، شکارچیان، کوهنوردان
+        و علاقه‌مندان به تجهیزات حرفه‌ای است.
+      </p>
+    </div>
   </main>
 
   <footer>تمام حقوق برای فروشگاه صاحب الزمان محفوظ است.</footer>
+
 </body>
 </html>
