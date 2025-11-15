@@ -6,21 +6,27 @@
   <style>
     body {
       font-family: Arial;
-      background-color: #f0f0f0;
+      background-color: #c3b091; /* خاکی نظامی */
       margin: 0;
       direction: rtl;
     }
+
     header {
-      background-color: #333;
+      background-color: #4b4a3a;
       color: white;
-      padding: 20px;
-      font-size: 24px;
+      padding: 22px;
+      font-size: 26px;
       text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     }
+
     nav {
-      background-color: #444;
+      background-color: #5a593f;
       padding: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
+
     nav ul {
       list-style: none;
       margin: 0;
@@ -29,15 +35,17 @@
       justify-content: center;
       gap: 25px;
     }
+
     nav ul li a {
-      color: white;
+      color: #f7f3e9;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 17px;
       transition: 0.3s;
     }
+
     nav ul li a:hover {
-      text-shadow: 1px 1px 4px black;
+      text-shadow: 1px 1px 6px black;
     }
 
     main {
@@ -45,20 +53,20 @@
       text-align: center;
     }
 
-    /* --- محصولات با Flexbox --- */
     .product-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
     }
 
     .product {
-      width: 230px;
-      background-color: white;
+      width: 240px;
+      background-color: #ebe3d1;
       padding: 15px;
       border-radius: 12px;
-      box-shadow: 2px 2px 7px rgba(0,0,0,0.2);
+      border: 2px solid #a89f81;
+      box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -66,52 +74,58 @@
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 2px 4px 12px rgba(0,0,0,0.3);
+      transform: translateY(-6px);
+      box-shadow: 3px 6px 16px rgba(0,0,0,0.4);
     }
 
     .product img {
-      width: 200px;
+      width: 210px;
       height: 160px;
-      border-radius: 8px;
+      border-radius: 6px;
+      border: 2px solid #6b6a47;
       object-fit: cover;
     }
 
     button {
       margin-top: 10px;
-      padding: 8px 15px;
+      padding: 10px 18px;
       border: none;
-      background-color: #333;
+      background-color: #4b4a3a;
       color: white;
+      font-size: 15px;
       border-radius: 6px;
       cursor: pointer;
       transition: 0.3s;
+      width: 90%;
     }
 
     button:hover {
-      background-color: #555;
+      background-color: #6b6a47;
+      transform: scale(1.04);
     }
 
     #cartMsg {
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
-      color: green;
+      color: #2f4f2f;
     }
 
     footer {
-      background-color: #333;
+      background-color: #4b4a3a;
       color: white;
-      padding: 10px;
+      padding: 12px;
       text-align: center;
+      width: 100%;
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 100%;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
+
   <header>فروشگاه لوازم نظامی صاحب الزمان</header>
 
   <nav>
