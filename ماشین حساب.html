@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ماشین حساب</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 320px;
+    }
+
+    .display {
+      height: 50px;
+      font-size: 20px;
+      text-align: right;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+      direction: ltr;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .buttons button {
+      width: 70px;
+      height: 50px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #388e3c;
+    }
+
+    .help {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #555;
+      background-color: #e0f7fa;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 400px) {
+      .calculator {
+        width: 95%;
+      }
+
+      .buttons button {
+        width: 60px;
+        height: 45px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="press('/')">÷</button>
+
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('*')">×</button>
+
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('-')">−</button>
+
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="press('+')">+</button>
+
+      <button onclick="press('**')">^</button>
+      <button onclick="sqrt()">√</button>
+      <button onclick="sin()">sin</button>
+      <button onclick="cos()">cos</button>
+
+      <button onclick="tan()">tan</button>
+      <button onclick="log()">log</button>
+      <button onclick="clearDisplay()">C</button>
+    </div>
+    <div class="help">
+      📌 راهنما: از دکمه‌ها برای وارد کردن عدد و عملیات استفاده کنید. برای توان از ^ استفاده کنید. برای جذر، سینوس، کسینوس، تانژانت و لگاریتم فقط عدد اول کافیست. دکمه C برای پاک کردن است.
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById("display");
+
+    function press(val) {
+      if (display.innerText === "0" || display.innerText === "خطا") {
+        display.innerText = val;
+      } else {
+        display.innerText += val;
+      }
+    }
+
+    function calculate() {
+      try {
+        display.innerText = eval(display.innerText);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+
+    function clearDisplay() {
+      display.innerText = "0";
+    }
+
+    function sqrt() {
+      try {
+        display.innerText = Math.sqrt(eval(display.innerText)).toFixed(4);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+
+    function sin() {
+      try {
+        display.innerText = Math.sin(eval(display.innerText) * Math.PI / 180).toFixed(4);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+
+    function cos() {
+      try {
+        display.innerText = Math.cos(eval(display.innerText) * Math.PI / 180).toFixed(4);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+
+    function tan() {
+      try {
+        display.innerText = Math.tan(eval(display.innerText) * Math.PI / 180).toFixed(4);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+
+    function log() {
+      try {
+        let val = eval(display.innerText);
+        if (val <= 0) throw "خطا";
+        display.innerText = Math.log10(val).toFixed(4);
+      } catch {
+        display.innerText = "خطا";
+      }
+    }
+  </script>
+
+</body>
+</html>
